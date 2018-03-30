@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        body{
+        	width:100%;
+        	margin:0;
+        	padding:0;
+        }
+        .wrap{
+        	width:100%;
+        	height:250px;
+        	background-image: url('./a.jpg');
+        }
+	</style>
+</head>
+<body>
+	<h2>i am test</h2>
+	<div class="wrap"></div>
+	<button id='btn'>change</button>
+</body>
+<script>
+	var banner = document.querySelector('.wrap');
+	var imgArr = ['a','b','c','d'];
+	btn.onclick = function(){
+		banner.style.backgroundImage = "url('./"+imgArr[1]+".jpg')";
+		imgArr.push(imgArr.shift());
+		console.log(imgArr);
+	}
+</script>
+</html>
