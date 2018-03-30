@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery.min.js'></script>
+	<style>
+        .text,.content,.show{
+            border:1px solid red;
+        	width:400px;
+        	height:200px;
+        }
+
+
+	</style>
+</head>
+<body>
+	<button id='btn'>get</button>
+	<div id='text' class='text'></div>
+	<div id='content' class='content'></div>
+	<input type="text" id='name' placeholder="你的名字">
+	<button id='btn1'>发言</button>
+	<button id='btn2'>查看记录</button>
+	<div id='show' class='show'></div>
+</body>
+<script>
+	   $(document).ready(function () {
+ 
+          $("#btn").click(function () {
+
+                $.ajax({
+                     url: "http://api.map.baidu.com/location/ip?ip=120.32.54.205&ak=	KdvfaxGhFexpmQY8REtZSZIi2lEsq2L5&coor=bd09ll",
+                     type: "GET",
+                     dataType: "jsonp", //指定服务器返回的数据类型
+                     success: function (data) {
+                         var result = JSON.stringify(data); //json对象转成字符串
+                         $("#text").html(result);
+                     }
+                 });
+ 
+             });
+ 
+         });
+</script>
+</html>
